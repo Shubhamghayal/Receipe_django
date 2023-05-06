@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    </style>
+</head>
+<body>
+<h3> home page</h3>
+
+<table>
+  <tr>
+    <th>Sr.NO</th>
+    <th>NAME</th>
+    <th>AGE</th>
+      <th>CAN VOTE</th>
+  </tr>
+  {% for people in peoples%}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{people.name}}</td>
+    <td>{{people.age}}</td>
+      <td>
+          {% if people.age >= 18 %}
+          YES
+          {% else %}
+          NO
+          {% endif %}
+      </td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+
+
+</body>
+</html>
